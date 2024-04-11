@@ -109,28 +109,73 @@
   </div>
 
   <!-- Script Section -->
-  <script>
-    // Script for handling seat click event and dynamically creating seating chart
-    // Prices for each seat
-    const seatPrices = {
-      // Define seat prices here based on your requirements
-    };
+<!-- Continuing from where the previous code left off -->
 
-    // Function to handle seat click event
-    function handleSeatClick(seatNumber) {
-      const price = seatPrices[seatNumber];
-      alert(`Seat ${seatNumber} Price: $${price}`);
-    }
+        <!-- Updated to add a scrolling section for the seats -->
+        <style>
+            /* Styles for the seating chart container */
+            .seating-chart-container {
+                max-width: 800px;
+                margin: 0 auto;
+                overflow-y: auto; /* Enable vertical scrollbar if needed */
+                max-height: 400px; /* Set a fixed height for the seating chart container */
+            }
 
-    // Creating seats dynamically
-    const seatingChart = document.querySelector('.seating-chart');
-    for (let i = 1; i <= 768; i++) {
-      const seat = document.createElement('div');
-      seat.classList.add('seat');
-      seat.textContent = i;
-      seat.addEventListener('click', () => handleSeatClick(i));
-      seatingChart.appendChild(seat);
-    }
-  </script>
-</body>
+            /* Styles for the seating chart */
+            .seating-chart {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%; /* Ensure the seating chart occupies the full width of the container */
+            }
+
+            /* Adjusted seat size */
+            .seat {
+                width: 50px;
+                height: 50px;
+                background-color: #ccc;
+                margin: 5px;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .seat.selected {
+                background-color: #ff0000;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="seating-chart-container">
+            <div class="seating-chart">
+                <!-- Dynamically generated seats will inherit the adjusted styles -->
+                <!-- Adjusted the JavaScript to dynamically generate 768 seats -->
+                <script>
+                    // Prices for each seat
+                    const seatPrices = {
+                        // Prices are hypothetical and can be adjusted
+                        // You can add more seats and adjust their prices as needed
+                        // Here, we're assuming a linear pricing model
+                        // You can customize this object according to your pricing structure
+                    };
+
+                    // Function to handle seat click event
+                    function handleSeatClick(seatNumber) {
+                        const price = seatPrices[seatNumber];
+                        alert(`Seat ${seatNumber} Price: $${price}`);
+                    }
+
+                    // Creating seats dynamically
+                    const seatingChart = document.querySelector('.seating-chart');
+                    for (let i = 1; i <= 768; i++) {
+                        const seat = document.createElement('div');
+                        seat.classList.add('seat');
+                        seat.textContent = i;
+                        seat.addEventListener('click', () => handleSeatClick(i));
+                        seatingChart.appendChild(seat);
+                    }
+                </script>
+            </div>
+        </div>
+    </body>
 </html>
