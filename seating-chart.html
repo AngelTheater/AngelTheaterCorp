@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Seating Chart | Angel Theater</title>
+  <title>Seating-Chart | Angel theater</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Reset and default styles */
+    /* Reset CSS */
     html, body {
       margin: 0;
       padding: 0;
-      font-family: Inter, sans-serif;
     }
-    /* Custom styles for seating chart */
-    .seating-chart {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 1200px; /* Adjust as needed */
+    /* Add your custom CSS styles here */
+    .seating-chart-container {
+      max-width: 1200px;
       margin: 0 auto;
+      padding: 20px;
+    }
+    .seating-chart-header {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .seating-chart-hero {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .seating-chart-gallery {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .seating-chart-features {
+      padding: 20px 0;
+    }
+    .seating-chart-banner {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .seating-chart-faq {
+      padding: 20px 0;
+    }
+    .seating-chart-footer {
+      text-align: center;
+      padding: 20px 0;
     }
     .seat {
-      width: 30px; /* Adjust size as needed */
-      height: 30px; /* Adjust size as needed */
+      width: 30px;
+      height: 30px;
       background-color: #ccc;
-      margin: 5px;
+      margin: 2px;
       cursor: pointer;
-      display: flex;
+      display: inline-flex;
       justify-content: center;
       align-items: center;
-      border-radius: 50%; /* Make seats round */
+      border-radius: 5px;
     }
     .seat.selected {
       background-color: #ff0000;
@@ -35,33 +59,78 @@
   </style>
 </head>
 <body>
-  <!-- Seating chart container -->
-  <div class="seating-chart">
-    <!-- Dynamic creation of seats -->
-    <script>
-      // Function to handle seat click event
-      function handleSeatClick(seatNumber) {
-        // Placeholder function, you can customize this to fit your needs
-        console.log(`Seat ${seatNumber} clicked`);
-      }
+  <div class="seating-chart-container">
+    <!-- Header Section -->
+    <div class="seating-chart-header">
+      <header>
+        <h1>Welcome to Angel Theater</h1>
+        <p>Experience the magic of live theater.</p>
+      </header>
+    </div>
+    
 
-      // Creating seats dynamically
-      const seatingChart = document.querySelector('.seating-chart');
-      const numRows = 32; // 32 rows
-      const seatsPerRow = 24; // 24 seats per row
-      const totalSeats = numRows * seatsPerRow;
+    <!-- Features Section -->
+    <div class="seating-chart-features">
+      <div class="seating-chart-features1">
+        <div class="seating-chart-container2">
+          <span class="overline"><span>Prices</span><br /></span>
+          <h2 class="seating-chart-features-heading heading2">SEATING</h2>
+          <div class="seating-chart-container3">
+            <!-- Dynamic seating chart with clickable seats -->
+            <div class="seating-chart">
+              <!-- Seats will be dynamically generated here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      for (let row = 1; row <= numRows; row++) {
-        for (let seat = 1; seat <= seatsPerRow; seat++) {
-          const seatNumber = (row - 1) * seatsPerRow + seat;
-          const seatElement = document.createElement('div');
-          seatElement.classList.add('seat');
-          seatElement.textContent = seatNumber;
-          seatElement.addEventListener('click', () => handleSeatClick(seatNumber));
-          seatingChart.appendChild(seatElement);
-        }
-      }
-    </script>
+    <!-- Banner Section -->
+    <div class="seating-chart-banner">
+      <div class="banner-content">
+        <h2>Book Your Tickets Now!</h2>
+        <p>Experience the best live performances at Angel Theater.</p>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="seating-chart-faq">
+      <div class="faq-questions">
+        <!-- Add frequently asked questions here -->
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footerContainer seating-chart-footer">
+      <div class="footer-content">
+        <p>&copy; 2024 Angel Theater. All rights reserved.</p>
+      </div>
+    </footer>
   </div>
+
+  <!-- Script Section -->
+  <script>
+    // Script for handling seat click event and dynamically creating seating chart
+    // Prices for each seat
+    const seatPrices = {
+      // Define seat prices here based on your requirements
+    };
+
+    // Function to handle seat click event
+    function handleSeatClick(seatNumber) {
+      const price = seatPrices[seatNumber];
+      alert(`Seat ${seatNumber} Price: $${price}`);
+    }
+
+    // Creating seats dynamically
+    const seatingChart = document.querySelector('.seating-chart');
+    for (let i = 1; i <= 768; i++) {
+      const seat = document.createElement('div');
+      seat.classList.add('seat');
+      seat.textContent = i;
+      seat.addEventListener('click', () => handleSeatClick(i));
+      seatingChart.appendChild(seat);
+    }
+  </script>
 </body>
 </html>
