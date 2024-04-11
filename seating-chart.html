@@ -179,7 +179,10 @@
                 ><span class="overline"><span>Prices</span><br /></span
                 ><h2 class="seating-chart-features-heading heading2">SEATING</h2
                 ><div class="seating-chart-container3"
-                  ><div class="seating-chart-container4">
+                  ><p class="seating-chart-info-text bodySmall">
+                    Welcome to Angel Theater's seating chart! Here's a tip to help you make the best choice: Middle row seats are the most economical, with back rows following suit. If you're looking for premium seating and don't mind spending a little extra, the front rows offer the best views and experience. Enjoy the show!
+                  </p></div
+
                     <style>
                       /* Styles for the seating chart */
                       .seating-chart {
@@ -205,95 +208,7 @@
                       }
                     </style>
 
-                    <div class="seating-chart">
-                      <!-- 10 rows and 5 seats per row -->
-                      <!-- Seats are numbered from 1 to 50 -->
-                      <!-- Front row is row 1, back row is row 10 -->
-                      <!-- Middle seats are seats 11 to 15 -->
-                      <!-- Price increases from the back row to the front row -->
-                      <!-- Price decreases from the middle seats to the edge seats -->
-                      <!-- You can adjust the prices as per your requirement -->
-                      <!-- The seat numbers and prices are hardcoded for simplicity -->
-                      <!-- You can fetch them from a database if you have one -->
-                      <!-- Seat prices are stored in a JavaScript object -->
-                      <!-- The key is the seat number and the value is the price -->
-                      <!-- You can add more seats and adjust their prices as needed -->
-                      <!-- Seats are clickable and show the price when clicked -->
-                      <!-- The price is displayed in an alert box for demonstration -->
-                      <!-- You can customize this to show the price in a different way -->
-
-                      <script>
-                        // Prices for each seat
-                        const seatPrices = {
-                          1: 100,
-                          2: 90,
-                          3: 80,
-                          4: 70,
-                          5: 60,
-                          6: 70,
-                          7: 80,
-                          8: 90,
-                          9: 100,
-                          10: 100,
-                          11: 80,
-                          12: 70,
-                          13: 60,
-                          14: 70,
-                          15: 80,
-                          16: 90,
-                          17: 100,
-                          18: 100,
-                          19: 90,
-                          20: 80,
-                          21: 70,
-                          22: 60,
-                          23: 70,
-                          24: 80,
-                          25: 90,
-                          26: 100,
-                          27: 100,
-                          28: 90,
-                          29: 80,
-                          30: 70,
-                          31: 60,
-                          32: 70,
-                          33: 80,
-                          34: 90,
-                          35: 100,
-                          36: 100,
-                          37: 90,
-                          38: 80,
-                          39: 70,
-                          40: 60,
-                          41: 70,
-                          42: 80,
-                          43: 90,
-                          44: 100,
-                          45: 100,
-                          46: 90,
-                          47: 80,
-                          48: 70,
-                          49: 60,
-                          50: 70,
-                        };
-
-                        // Function to handle seat click event
-                        function handleSeatClick(seatNumber) {
-                          const price = seatPrices[seatNumber];
-                          alert(`Seat ${seatNumber} Price: $${price}`);
-                        }
-
-                        // Creating seats dynamically
-                        const seatingChart = document.querySelector('.seating-chart');
-                        for (let i = 1; i <= 50; i++) {
-                          const seat = document.createElement('div');
-                          seat.classList.add('seat');
-                          seat.textContent = i;
-                          seat.addEventListener('click', () => handleSeatClick(i));
-                          seatingChart.appendChild(seat);
-                        }
-                      </script>
-                    </div>
+                   
                   </div></div
                 ><span class="seating-chart-features-sub-heading bodyLarge"
                   ><span
